@@ -52,7 +52,7 @@ async function getWeather(req) {
   try {
     load.classList.remove("transparent");
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?${params}+&q=${req}`,
+      `https://api.openweathermap.org/data/2.5/weather?${params}+&q=${req}`,
       { mode: "cors" }
     );
     load.classList.add("transparent");
