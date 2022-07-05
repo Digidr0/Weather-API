@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="icon" type="image/x-icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Circle-icons-weather.svg/512px-Circle-icons-weather.svg.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <header>
+        <div class="search-container">
+            <input type="text" class="search input" placeholder="Введите город">
+            <span class="material-symbols-outlined search btn">search</span>
+        </div>
+        <div class="response-container">
+            <span class="response-time"></span>
+        </div>
+        
+    </header>
+    <main>
+        <div class="lds-ellipsis transparent">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="cf2" class="shadow">
+            <img class="bottom" />
+            <img class="top" />
+        </div>
+        <div class="current-weather">
+            <div class="main-stats">
+                <span class="city"></span>
+                <div class="temperature-div">
+                    <span class="temperature-min"></span>
+                    <span class="temperature"></span>
+                    <span class="temperature-max"></span>
+                </div>
+                <div class="weather-status-div">
+                    <span class="weather-status"></span>
+                    <img class="weather-status-icon">
+                </div>
+            </div>
+
+            <div class="second-stats">
+                <span class="feels">Ощущается как: <span></span></span>
+                <span class="wind">Ветер: <span></span></span>
+                <span class="wind-gust">Порывы до <span></span></span>
+                <span class="pressure">Давление: <span></span></span>
+                <span class="visibility">Видимость: <span></span></span>
+                <span class="humidity">Влажность: <span></span></span>
+            </div>
+            <div class="sun-stats">
+                <div class="sunrise">
+                    <span class="material-symbols-outlined">
+                        wb_twilight
+                    </span><span>Восход: <span class="stats">6.25h</span></span>
+                </div>
+                <div class="sunset"> <span class="material-symbols-outlined">
+                        sunny_snowing
+                    </span><span>Закат: <span class="stats">18h</span></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="forecast"></div>
+    </main>
+</body>
+<script src="main.js" defer></script>
+
+</html>
