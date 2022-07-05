@@ -71,7 +71,7 @@ function displayData(data) {
   temperatureMin.textContent = `${data.main.temp_min.toFixed(1)}°`;
   temperatureMax.textContent = `${data.main.temp_max.toFixed(1)}°`;
   wetatherStatus.textContent = `${data.weather[0].description.capFstLtr()}`;
-  wetatherStatusIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  wetatherStatusIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   changeBG(data.weather[0].icon, data.timezone);
 
   feels.textContent = `${data.main.feels_like.toFixed(1)}°`;
