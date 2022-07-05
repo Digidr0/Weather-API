@@ -7,6 +7,10 @@ import displayData from "./displayData";
 
 const searchInput = document.querySelector(".search.input");
 const searchBtn = document.querySelector(".search.btn");
+const load = document.querySelector(".lds-ellipsis");
+
+const temperature = document.querySelector(".temperature");
+const wetatherStatus = document.querySelector(".weather-status");
 
 const KEY = "5943486d8d5be825b7f2cf0cc6b9375d";
 let params = new URLSearchParams({

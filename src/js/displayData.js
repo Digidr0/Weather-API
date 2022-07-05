@@ -8,7 +8,6 @@ export default function displayData(data) {
 
   const responseTime = document.querySelector(".response-time");
 
-  const load = document.querySelector(".lds-ellipsis");
   const city = document.querySelector(".city");
   const temperature = document.querySelector(".temperature");
   const temperatureMin = document.querySelector(".temperature-min");
