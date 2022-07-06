@@ -82,7 +82,6 @@ export default function changeBG(icon, zone) {
     }
     index = 4;
   }
-  console.log(code, time + "H");
 
   async function delay() {
     function sleep(ms) {

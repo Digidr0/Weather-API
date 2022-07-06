@@ -1,4 +1,10 @@
-main,
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content
+}
 .main-stats {
   display: flex;
   flex-direction: column;

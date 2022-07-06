@@ -24,3 +24,23 @@ body {
   span{
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   }
+
+ 
+  canvas { display:block;} /* To remove the scrollbars */
+
+  footer{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    opacity: 0.4;
+    background-color: #000000;
+  }
+ footer a{
+  margin: .2em;
+    text-decoration: none;
+    color: white;
+}

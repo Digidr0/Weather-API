@@ -3,6 +3,9 @@ import checkDirection from "./checkDirection";
 import {format, fromUnixTime} from "date-fns";
 
 export default function displayData(data) {
+
+  console.log("Weather data:\n",data);
+
   const title = document.querySelector("title");
   const favicon = document.querySelector("link[rel~='icon']");
 
@@ -23,7 +26,7 @@ export default function displayData(data) {
   const humidity = document.querySelector(".humidity > span");
   const sunrise = document.querySelector(".sunrise .stats");
   const sunset = document.querySelector(".sunset .stats");
-  console.log(data);
+  
 
   title.innerText = `Weather in ${data.name} ${data.main.temp.toFixed(1)}°`;
 

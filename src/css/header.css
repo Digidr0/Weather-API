@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: max-content;
+  height: 2em;
   background-color: rgba(0, 0, 0, 0.05);
   padding: 0.5em;
 }
