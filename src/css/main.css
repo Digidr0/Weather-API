@@ -1,9 +1,10 @@
-main{
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: fit-content
+  height: 100%;
+  transition: all 1s;
 }
 .main-stats {
   display: flex;
@@ -19,17 +20,19 @@ main{
   font-weight: 400;
 }
 
-.temperature-min, .temperature-max{
-opacity: .5;
-font-size: .8em;
+.temperature-min,
+.temperature-max {
+  opacity: 0.5;
+  font-size: 0.8em;
 }
-.weather-status-div{
+.weather-status-div {
   display: flex;
   align-items: center;
   font-weight: 400;
 }
-.weather-status-div img{
+.weather-status-div img {
   height: 2em;
+
 }
 .second-stats {
   display: grid;
@@ -58,4 +61,14 @@ font-size: .8em;
 .sun-stats > * > span {
   display: flex;
   align-items: center;
+}
+
+.forecast {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 33%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  width: 100vw;
 }

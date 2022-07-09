@@ -12,7 +12,7 @@ export default function displayForecast(data) {
   let hours = [];
   let temps = [];
   
-  const valuesMaxNumber = 17; //max 40 // 1 day = 8
+  const valuesMaxNumber = 25; //max 40 // 1 day = 8
   const sampling = 2;
 
   function getArray() {
@@ -33,15 +33,17 @@ export default function displayForecast(data) {
     let chart = canvas.getContext("2d");
     canvas.width = window.innerWidth;
 
-    Chart.defaults.color = "#FFF8";
-    Chart.defaults.font.size = 14;
-    Chart.defaults.font.family = "Helvetica";
+    Chart.defaults.font.size = 16;
+    Chart.defaults.font.family = "'Geometria', 'Open Sans', 'Arial'";
+    Chart.defaults.font.weight = "600";
     Chart.defaults.color = "#FFF8";
     Chart.defaults.plugins.legend.display = false;
-    Chart.defaults.elements.point.radius = 5;
+    Chart.defaults.elements.point.radius = 0;
     Chart.defaults.elements.point.hitRadius = 40;
-    Chart.defaults.elements.point.pointStyle = "crossRot";
+    Chart.defaults.elements.point.pointStyle = "circle";
     Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(0, 0, 0, 0)';
+
+    Chart.defaults.plugins.tooltip.enabled = true;
 
 
     myChart = new Chart(chart, {
@@ -52,13 +54,16 @@ export default function displayForecast(data) {
           {
             label: "Temp",
             data: temps,
-            backgroundColor: "#FFF",
-            borderColor: "#FFF",
-            borderWidth: "1",
+            backgroundColor: "#FFF8",
+            borderColor: "#FFF8",
+            borderWidth: "2",
+            tension: "0.1",
           },
         ],
       },
-      options: {
+      options:
+      
+      {
         scales: {
           x: {
             grid: {
