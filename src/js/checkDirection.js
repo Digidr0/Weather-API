@@ -1,3 +1,4 @@
+ //interrupt degrees to a side of the world
 export default function checkDirection(index) {
   if (22.6 < index && index < 67.5) {
     return "СВ";

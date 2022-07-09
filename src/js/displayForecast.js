@@ -5,10 +5,10 @@ import Chart from "chart.js/auto";
 
 let used = false;
 let myChart;
-
+// display all forecast data
 export default function displayForecast(data) {
   console.log("Forecast data:\n", data);
-
+  // X an Y axes of chart
   let hours = [];
   let temps = [];
 
@@ -27,12 +27,14 @@ export default function displayForecast(data) {
   }
   getArray();
 
+  // if canvas not used create new chart
   if (!used) {
     used = true;
     let canvas = document.getElementById("chart");
     let chart = canvas.getContext("2d");
     canvas.width = window.innerWidth;
 
+    // settings
     Chart.defaults.font.size = 16;
     Chart.defaults.font.family = "'Geometria', 'Open Sans', 'Arial'";
     Chart.defaults.font.weight = "600";
@@ -42,9 +44,9 @@ export default function displayForecast(data) {
     Chart.defaults.elements.point.hitRadius = 40;
     Chart.defaults.elements.point.pointStyle = "circle";
     Chart.defaults.plugins.tooltip.backgroundColor = "rgba(0, 0, 0, 0)";
-
     Chart.defaults.plugins.tooltip.enabled = true;
 
+    // callback hell
     myChart = new Chart(chart, {
       type: "line",
       data: {
@@ -89,6 +91,8 @@ export default function displayForecast(data) {
       },
     });
   }
+
+  // update chart when new request get
   function refreshData() {
     myChart.data.labels = hours;
     myChart.data.datasets[0].data = temps;

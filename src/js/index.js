@@ -13,7 +13,7 @@ const load = document.querySelector(".lds-ellipsis");
 const temperature = document.querySelector(".temperature");
 const wetatherStatus = document.querySelector(".weather-status");
 
-
+//request parametrs
 let params = new URLSearchParams({
   APPID: "5943486d8d5be825b7f2cf0cc6b9375d",
   units: "metric",
@@ -22,15 +22,15 @@ let params = new URLSearchParams({
 Object.prototype.capFstLtr = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
-
+//set city name in local storage (null if u 1st tiem visit page)
 function setLocalStorage(item) {
   localStorage.setItem("city", JSON.stringify(item));
 }
-
+//get city from localstorage
 function getLocalStorage() {
   return JSON.parse(localStorage.getItem("city")) || "";
 }
-
+//create new weather request to openWeatherMap using parametrs
 async function getWeather(req) {
   try {
     load.classList.remove("transparent");
@@ -45,7 +45,7 @@ async function getWeather(req) {
     displayError();
   }
 }
-
+//create new forecast request to openWeatherMap using parametrs
 async function getForecast(req) {
   try {
     load.classList.remove("transparent");
@@ -60,17 +60,17 @@ async function getForecast(req) {
     displayError();
   }
 }
-
+//display err in console
 function displayError() {
   temperature.textContent = "Incorrect city";
   wetatherStatus.textContent = "Please, enter correct city name";
 }
-
+//search button event
 searchBtn.addEventListener("click", () => {
   setLocalStorage(searchInput.value);
   getWeather(getLocalStorage("cities"));
 });
-
+//"Enter" keyup event
 searchInput.addEventListener("keyup", function (key) {
   key.preventDefault();
   if (key.keyCode === 13) {
@@ -79,11 +79,8 @@ searchInput.addEventListener("keyup", function (key) {
     getForecast(getLocalStorage("cities"));
   }
 });
-
+//on load get request and display data
 window.onload = () => {
   getWeather(getLocalStorage("cities"));
   getForecast(getLocalStorage("cities"));
 };
-
-
-

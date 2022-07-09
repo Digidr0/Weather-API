@@ -5,7 +5,7 @@ import {format, fromUnixTime} from "date-fns";
 export default function displayData(data) {
 
   console.log("Weather data:\n",data);
-
+ // get all DOM
   const title = document.querySelector("title");
   const favicon = document.querySelector("link[rel~='icon']");
 
@@ -28,6 +28,11 @@ export default function displayData(data) {
   const sunset = document.querySelector(".sunset .stats");
   
 
+  // set all DOMs' data
+
+  //set response time (search btn text)
+  responseTime.innerText = format(new Date(), "HH:mm");  
+  //set title and favicon of page
   title.innerText = `Weather in ${data.name} ${data.main.temp.toFixed(1)}°`;
 
   city.textContent = `${data.name}, ${data.sys.country.toLowerCase()}`;
@@ -36,7 +41,6 @@ export default function displayData(data) {
   temperatureMax.textContent = `${data.main.temp_max.toFixed(1)}°`;
   wetatherStatus.textContent = `${data.weather[0].description.capFstLtr()}`;
   wetatherStatusIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-  changeBG(data.weather[0].icon, data.timezone);
   favicon.href = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
   feels.textContent = `${data.main.feels_like.toFixed(1)}°`;
@@ -48,6 +52,6 @@ export default function displayData(data) {
 
   sunrise.textContent = format(fromUnixTime(data.sys.sunrise), "hh:mm aa");
   sunset.textContent = format(fromUnixTime(data.sys.sunset), "hh:mm aa");
-
-  responseTime.innerText = format(new Date(), "HH:mm");
+ //change background depending on the time of day and weather
+  changeBG(data.weather[0].icon, data.timezone);
 }
