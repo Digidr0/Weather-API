@@ -11,7 +11,7 @@ export default function displayForecast(data) {
 
   let hours = [];
   let temps = [];
-  
+
   const valuesMaxNumber = 25; //max 40 // 1 day = 8
   const sampling = 2;
 
@@ -41,10 +41,9 @@ export default function displayForecast(data) {
     Chart.defaults.elements.point.radius = 0;
     Chart.defaults.elements.point.hitRadius = 40;
     Chart.defaults.elements.point.pointStyle = "circle";
-    Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(0, 0, 0, 0)';
+    Chart.defaults.plugins.tooltip.backgroundColor = "rgba(0, 0, 0, 0)";
 
     Chart.defaults.plugins.tooltip.enabled = true;
-
 
     myChart = new Chart(chart, {
       type: "line",
@@ -61,9 +60,18 @@ export default function displayForecast(data) {
           },
         ],
       },
-      options:
-      
-      {
+      options: {
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return `${context.dataset.data[context.dataIndex]} \n${
+                  data.list[context.dataIndex].weather[0].main
+                }, \nwind: ${data.list[context.dataIndex].wind.speed} м/с`;
+              },
+            },
+          },
+        },
         scales: {
           x: {
             grid: {
