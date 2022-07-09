@@ -4,13 +4,22 @@
   --wallpaper-color-3: #3a1737;
   --wallpaper-color-4: #6f0948;
 }
-
-body {
-  font-family: geometria, roboto;
-  font-weight: 300;
-  background-color: var(--wallpaper-color-3);
+*{
   margin: 0;
   padding: 0;
+  font-family: geometria, roboto;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-weight: 300;
+  background-color: var(--wallpaper-color-3);
+  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .material-symbols-outlined {
@@ -22,11 +31,10 @@ body {
   }
 
   span{
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
- 
-  canvas { display:block;} /* To remove the scrollbars */
+
 
   footer{
     overflow: hidden;
@@ -39,6 +47,7 @@ body {
     opacity: 0.4;
     background-color: #000000;
   }
+
  footer a{
   margin: .2em;
     text-decoration: none;
