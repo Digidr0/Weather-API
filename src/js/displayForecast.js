@@ -67,7 +67,7 @@ export default function displayForecast(data) {
           tooltip: {
             callbacks: {
               label: function (context) {
-                return `${context.dataset.data[context.dataIndex]} \n${
+                return `${context.dataset.data[context.dataIndex]}° \n${
                   data.list[context.dataIndex].weather[0].main
                 }, \nwind: ${data.list[context.dataIndex].wind.speed} м/с`;
               },

@@ -1,8 +1,8 @@
 import { getTime, format, addSeconds, fromUnixTime } from "date-fns";
 
 export default function changeBG(icon, zone) {
-  const top = document.querySelector(".cf2 > .top");
-  const bottom = document.querySelector(".cf2 > .bottom");
+  const top = document.querySelector(".top");
+  const bottom = document.querySelector(".bottom");
 
   let date = new Date();
   let GMT = new Date(
