@@ -3,6 +3,7 @@ import { getTime, format, addSeconds, fromUnixTime } from "date-fns";
 export default function changeBG(icon, zone) {
   const top = document.querySelector(".top");
   const bottom = document.querySelector(".bottom");
+  const themcolor = document.querySelector(".theme-color");
 
   let date = new Date();
   let GMT = new Date(
@@ -48,6 +49,7 @@ export default function changeBG(icon, zone) {
         break;
     }
     index = 1;
+    themcolor.content = "#b2e4fd";
   }
   // A.M.
   if (hours[1] <= time || time >= hours[2]) {
@@ -75,6 +77,7 @@ export default function changeBG(icon, zone) {
         break;
     }
     index = 2;
+    themcolor.content = "#463ffe";
   }
   // NOON
   if (hours[2] <= time || time >= hours[3]) {
@@ -102,6 +105,7 @@ export default function changeBG(icon, zone) {
         break;
     }
     index = 3;
+    themcolor.content = "#3a1737";
   }
   // P.M.
   if (hours[3] <= time || time >= hours[4]) {
@@ -129,8 +133,9 @@ export default function changeBG(icon, zone) {
         break;
     }
     index = 4;
+    themcolor.content = "#6f0948";
   }
-//sleep for images transition
+  //sleep for images transition
   async function delay() {
     function sleep(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
