@@ -45,7 +45,7 @@ export default function displayData(data) {
 
   feels.textContent = `${data.main.feels_like.toFixed(1)}°`;
   wind.textContent = `${data.wind.speed} м/с, ${checkDirection(data.wind.deg)}`;
-  windGust.textContent = `${data.wind.gust} м/с`;
+  windGust.textContent = `${(data.wind.gust) || 0} м/с`;
   pressure.textContent = ` ${data.main.pressure} гПа`;
   visibility.textContent = `${(data.visibility / 1000).toFixed(1)} км`;
   humidity.textContent = `${data.main.humidity}%`;
