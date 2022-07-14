@@ -28,7 +28,7 @@ function setLocalStorage(item) {
 }
 //get city from localstorage
 function getLocalStorage() {
-  return JSON.parse(localStorage.getItem("city")) || "";
+  return JSON.parse(localStorage.getItem("city")) || "Moscow";
 }
 //create new weather request to openWeatherMap using parametrs
 async function getWeather(req) {
