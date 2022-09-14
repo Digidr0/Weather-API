@@ -4,4 +4,4 @@
   ### Live prewiew you can find [here](https://digidr0.github.io/Weather-API/)
   <div>
   <img src="/res/1.gif" width="100%">
-  <div>
+  </div>
