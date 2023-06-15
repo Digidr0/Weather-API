@@ -5,6 +5,7 @@ import "..//css/load.css";
 import "..//css/main.css";
 import displayData from "./displayData";
 import displayForecast from "./displayForecast";
+import cities from "./cities.json";
 
 const searchInput = document.querySelector(".search.input");
 const searchBtn = document.querySelector(".search.btn");
@@ -70,15 +71,50 @@ searchBtn.addEventListener("click", () => {
   setLocalStorage(searchInput.value);
   getWeather(getLocalStorage("cities"));
 });
+//autocomplete input event
+searchInput.addEventListener("keyup", function (key) {
+  removeElements();
+  for (let i of cities) {
+    if (
+      i.toLowerCase().startsWith(searchInput.value.toLowerCase()) &&
+      searchInput.value != "" && document.querySelectorAll(".list-items")?.length < 10
+    ) {
+      let listItem = document.createElement("li");
+
+      listItem.classList.add("list-items");
+      listItem.style.cursor = "pointer";
+      listItem.onclick = function () {
+        searchInput.value = i;
+        removeElements();
+        startRequest();
+      };
+
+      let word = "<b>" + i.substr(0, searchInput.value.length) + "</b>";
+      word += i.substr(searchInput.value.length);
+      listItem.innerHTML = word;
+      document.querySelector(".list").appendChild(listItem);
+    }
+  }
+});
+function displayNames(value) {
+  searchInput.value = value;
+}
+function removeElements() {
+  let items = document.querySelectorAll(".list-items");
+  items.forEach((item) => {
+    item.remove();
+  });
+}
 //"Enter" keyup event
 searchInput.addEventListener("keyup", function (key) {
   key.preventDefault();
-  if (key.keyCode === 13) {
-    setLocalStorage(searchInput.value);
-    getWeather(getLocalStorage("cities"));
-    getForecast(getLocalStorage("cities"));
-  }
+  if (key.keyCode === 13) startRequest()
 });
+function startRequest(){
+  setLocalStorage(searchInput.value);
+  getWeather(getLocalStorage("cities"));
+  getForecast(getLocalStorage("cities"));
+}
 //on load get request and display data
 window.onload = () => {
   getWeather(getLocalStorage("cities"));
