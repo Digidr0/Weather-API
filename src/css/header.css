@@ -11,18 +11,21 @@ header {
 
 .search-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
+  width: 20em;
+  margin-right: 1em;
 }
 
 .search-container input {
-  width: 20em;
+  text-align: center;
+  width: 100%;
   border-radius: 1em;
-  border: 3px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
   background: none;
   font-size: 1.2em;
-  text-align: center;
   color:rgba(255, 255, 255, 0.6);
 }
 .search-container input::placeholder{
@@ -55,22 +58,31 @@ header .response-container{
 }
 
 .list-container{
-  padding: 1em;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
+  top: 3em;
   width: 20em;
   position: absolute;
-  top: 3em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   z-index: 2;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
 }
 .list{
   list-style-type: none;
+
+}
+.list-items{
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  padding: 0.2em;
 }
 .list-items:hover{
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
+  
+
+  transition: background-color 0.5s ease-out;
 
 
 }

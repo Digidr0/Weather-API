@@ -18,16 +18,17 @@
     <header>
         <div class="search-container">
             <input type="text" class="search input" placeholder="Введите город">
-            <span class="material-symbols-outlined search btn">search</span>
+            <div class="list-container">
+                <ul class="list"></ul>
+            </div>
         </div>
+        <span class="material-symbols-outlined search btn">search</span>
         <div class="response-container">
             <span class="response-time"></span>
         </div>
 
     </header>
-    <div class="list-container">
-        <ul class="list"></ul>
-    </div>
+
     <main>
         <div class="lds-ellipsis transparent">
             <div></div>
@@ -36,16 +37,16 @@
             <div></div>
         </div>
         <div class="cf2">
-            <img class="bottom" />
-            <img class="top" />
+            <img class="bottom"/>
+            <img class="top" src="https://i.imgur.com/I7bPyBV.jpeg"/>
         </div>
         <div class="current-weather">
             <div class="main-stats">
                 <span class="city">Город</span>
                 <div class="temperature-div">
-                    <span class="temperature-min">0</span>
-                    <span class="temperature">20</span>
-                    <span class="temperature-max">25</span>
+                    <span class="temperature-min">0°</span>
+                    <span class="temperature">20°</span>
+                    <span class="temperature-max">25°</span>
                 </div>
                 <div class="weather-status-div">
                     <span class="weather-status">Солнечно</span>
@@ -54,22 +55,22 @@
             </div>
 
             <div class="second-stats">
-                <span class="feels">Ощущается как: <span>25</span></span>
-                <span class="wind">Ветер: <span>2</span></span>
-                <span class="wind-gust">Порывы до <span>2</span></span>
-                <span class="pressure">Давление: <span>1000</span></span>
-                <span class="visibility">Видимость: <span>10</span></span>
-                <span class="humidity">Влажность: <span>50</span></span>
+                <span class="feels">Ощущается как: <span>25°</span></span>
+                <span class="wind">Ветер: <span>2 м/с, С</span></span>
+                <span class="wind-gust">Порывы до <span>2 м/с</span></span>
+                <span class="pressure">Давление: <span>1000 гПа</span></span>
+                <span class="visibility">Видимость: <span>10 км</span></span>
+                <span class="humidity">Влажность: <span>50 %</span></span>
             </div>
             <div class="sun-stats">
                 <div class="sunrise">
                     <span class="material-symbols-outlined">
                         wb_twilight
-                    </span><span>Восход: <span class="stats">06:00</span></span>
+                    </span><span>Восход: <span class="stats">06:00 AM</span></span>
                 </div>
                 <div class="sunset"> <span class="material-symbols-outlined">
                         sunny_snowing
-                    </span><span>Закат: <span class="stats">20:00</span></span>
+                    </span><span>Закат: <span class="stats">20:00 PM</span></span>
                 </div>
             </div>
         </div>
